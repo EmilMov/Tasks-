@@ -1,0 +1,21 @@
+#include <iostream>
+#include <fstream>
+#include <cstring>
+    struct Book {
+        char title[100];
+        char author[100];
+        int publication_year;
+    };
+int main()
+{
+    Book bk;
+    strcpy(bk.title,"Genghis Khan");
+    strcpy(bk.author, "V.G. Yan ");
+    bk.publication_year = 1972;
+    std::ofstream OUT("book.txt");
+    OUT<<"Title :"<<bk.title<<std::endl;
+    OUT<<"Autor :"<<bk.author<<std::endl;
+    OUT<<"Year :"<<bk.publication_year<<std::endl;
+    OUT.close();
+    return 0;
+}
